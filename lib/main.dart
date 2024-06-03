@@ -4,9 +4,9 @@ import 'package:state_flutter/bloc/counter_event.dart';
 import 'package:state_flutter/bloc/counter_state.dart';
 // ignore: depend_on_referenced_packages
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:state_flutter/visibility_state.dart/visibility_bloc.dart';
-import 'package:state_flutter/visibility_state.dart/visibility_event.dart';
-import 'package:state_flutter/visibility_state.dart/visibility_state.dart';
+import 'package:state_flutter/bloc_visibility/visibility_bloc.dart';
+import 'package:state_flutter/bloc_visibility/visibility_event.dart';
+import 'package:state_flutter/bloc_visibility/visibility_state.dart';
 
 void main() {
   runApp(const MyApp());

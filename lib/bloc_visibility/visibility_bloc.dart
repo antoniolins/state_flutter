@@ -1,7 +1,7 @@
 // ignore: depend_on_referenced_packages
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:state_flutter/visibility_state.dart/visibility_event.dart';
-import 'package:state_flutter/visibility_state.dart/visibility_state.dart';
+import 'package:state_flutter/bloc_visibility/visibility_event.dart';
+import 'package:state_flutter/bloc_visibility/visibility_state.dart';
 
 class VisibilityBloc extends Bloc<VisibilityEvent, VisibilityState>  {
 
