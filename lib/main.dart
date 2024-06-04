@@ -69,7 +69,15 @@ class _MyHomePageState extends State<MyHomePage> {
             const Text(
               'You have pushed the button this many times:',
             ),
-            BlocBuilder<CounterBloc, CounterState>(
+            BlocConsumer<CounterBloc, CounterState>(
+              listener: (context, state) {
+                
+              if (state.count == 3) {
+                ScaffoldMessenger.of(context).
+                       showSnackBar(SnackBar(content: Text('Counter value is ${state.count}')));
+              }
+
+              },
               // bloc: counterBloc,
               builder: (context, state) {
                 return Text(
