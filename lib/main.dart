@@ -4,9 +4,9 @@ import 'package:state_flutter/bloc/counter_event.dart';
 import 'package:state_flutter/bloc/counter_state.dart';
 // ignore: depend_on_referenced_packages
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:state_flutter/visibility_state.dart/visibility_bloc.dart';
-import 'package:state_flutter/visibility_state.dart/visibility_event.dart';
-import 'package:state_flutter/visibility_state.dart/visibility_state.dart';
+import 'package:state_flutter/bloc_visibility/visibility_bloc.dart';
+import 'package:state_flutter/bloc_visibility/visibility_event.dart';
+import 'package:state_flutter/bloc_visibility/visibility_state.dart';
 
 void main() {
   runApp(const MyApp());
@@ -88,6 +88,18 @@ class _MyHomePageState extends State<MyHomePage> {
                       height: 200,
                     ));
               },
+            ),
+            BlocListener<CounterBloc,CounterState>(
+
+              listenWhen: (prevState, currentState)=>true,
+              listener: (context,state){
+                
+              if (state.count == 3) {
+                ScaffoldMessenger.of(context).
+                       showSnackBar(SnackBar(content: Text('Counter value is ${state.count}')));
+              }
+            },
+            child: const Text('Bloc Listener'),
             )
           ],
         ),
